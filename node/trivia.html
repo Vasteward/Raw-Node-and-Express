@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia</title>
+    <!-- jQueryp -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+</head>
+<body>
+    <table class="row">
+        <div class="col s4 orange"><h1 class="center">Trivia Night</h1></div>
+        <div class="grey col s4"><h3 class="center">Total points ##</h3></div>
+        <tr class="science">
+            <th class="col s4 pink"><span class="flow-text">Science</span></th>
+            <th class="col s4 blue"><span class="flow-text">Mythology</span></th>
+            <th class="col s4 green"><span class="flow-text">Gadgets</span></th>
+        </tr>
+        <hr>
+        <tr class="food">
+            <td class="col s4 pink"><span class="flow-text science e-s">100</span></td>
+            <td class="col s4 blue"><span class="flow-text mythology e-m">100</span></td>
+            <td class="col s4 green"><span class="flow-text gadgets e-g">100</span></td>
+        </tr>
+        <hr>
+        <tr>
+            <td class="col s4 pink"><span class="flow-text science m-s">200</span></td>
+            <td class="col s4 blue"><span class="flow-text mythology m-m">200</span></td>
+            <td class="col s4 green"><span class="flow-text gadgets m-g">200</span></td>
+        </tr>
+        <hr>
+        <tr>
+            <td class="col s4 pink"><span class="flow-text science h-s">300</span></td>
+            <td class="col s4 blue"><span class="flow-text mythology h-m">300</span></td>
+            <td class="col s4 green"><span class="flow-text gadgets h-g">300</span></td>
+        </tr>
+    </table>
+</body>
+<script>
+    $(document).ready(function(){
+            $.get("https://opentdb.com/api.php?amount=10&category=20&type=multiple", function(data){
+                for(var i =0; i < data.results; i++){
+                    $('.mythology').append("<div class='col s4 pink'" + data.results[i].question + "</div>")
+                        console.log(data);
+                }
+            },'json')
+            });        
+</script>
+</html>
+
+<script>

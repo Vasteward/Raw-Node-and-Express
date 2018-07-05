@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CATS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+</head>
+<body>
+    <h1 class="center">ROAR</h1>
+        <div class="row center">
+        <% for (var x in cats) { %>
+            <h2>Here are all the cats:</h2>
+            <div><img src="<%= cats[x].photo %>" alt="" height="300" width="600"></div>
+            <h3>Name: <%= cats[x].name %></h3>
+            <h4>Favorite Meal: <%= cats[x].food %></h4>
+            <h4>Age: <%= cats[x].age %></h4>
+            <h4>Favorite place to lounge: <%= cats[x].rAndr %></h4>
+        </div>
+    </div>
+    <hr>
+    <% } %>
+</body>
+</html>
